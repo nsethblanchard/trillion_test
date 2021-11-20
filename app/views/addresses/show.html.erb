@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Address:</strong>
+  <%= @address.address %>
+</p>
+
+<p>
+  <strong>Acquired?:</strong>
+  <%= @address.acquired? %>
+</p>
+
+<p>
+  <strong>Block:</strong>
+  <%= @address.block_id %>
+</p>
+
 <%= link_to 'Edit', edit_address_path(@address) %> |
 <%= link_to 'Back', addresses_path %>

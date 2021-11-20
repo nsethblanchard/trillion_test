@@ -14,6 +14,7 @@ class BlocksTest < ApplicationSystemTestCase
     visit blocks_url
     click_on "New Block"
 
+    fill_in "Name", with: @block.name
     click_on "Create Block"
 
     assert_text "Block was successfully created"
@@ -24,6 +25,7 @@ class BlocksTest < ApplicationSystemTestCase
     visit blocks_url
     click_on "Edit", match: :first
 
+    fill_in "Name", with: @block.name
     click_on "Update Block"
 
     assert_text "Block was successfully updated"

@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_20_140825) do
+ActiveRecord::Schema.define(version: 2021_11_20_145811) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "address"
     t.boolean "acquired?", default: false, null: false
-    t.integer "block_id"
+    t.integer "block_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["block_id"], name: "index_addresses_on_block_id"

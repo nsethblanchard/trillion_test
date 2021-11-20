@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+   
   resources :blocks do
     resources :addresses
   end

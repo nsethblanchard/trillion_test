@@ -14,6 +14,9 @@ class AddressesTest < ApplicationSystemTestCase
     visit addresses_url
     click_on "New Address"
 
+    check "Acquired?" if @address.acquired?
+    fill_in "Address", with: @address.address
+    fill_in "Block", with: @address.block_id
     click_on "Create Address"
 
     assert_text "Address was successfully created"
@@ -24,6 +27,9 @@ class AddressesTest < ApplicationSystemTestCase
     visit addresses_url
     click_on "Edit", match: :first
 
+    check "Acquired?" if @address.acquired?
+    fill_in "Address", with: @address.address
+    fill_in "Block", with: @address.block_id
     click_on "Update Address"
 
     assert_text "Address was successfully updated"

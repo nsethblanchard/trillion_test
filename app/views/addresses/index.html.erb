@@ -5,6 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Address</th>
+      <th>Acquired?</th>
+      <th>Block</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +15,9 @@
   <tbody>
     <% @addresses.each do |address| %>
       <tr>
+        <td><%= address.address %></td>
+        <td><%= address.acquired? %></td>
+        <td><%= address.block_id %></td>
         <td><%= link_to 'Show', address %></td>
         <td><%= link_to 'Edit', edit_address_path(address) %></td>
         <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>

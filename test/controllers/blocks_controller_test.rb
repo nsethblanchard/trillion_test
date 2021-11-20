@@ -17,7 +17,7 @@ class BlocksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create block" do
     assert_difference('Block.count') do
-      post blocks_url, params: { block: {  } }
+      post blocks_url, params: { block: { name: @block.name } }
     end
 
     assert_redirected_to block_url(Block.last)
@@ -34,7 +34,7 @@ class BlocksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update block" do
-    patch block_url(@block), params: { block: {  } }
+    patch block_url(@block), params: { block: { name: @block.name } }
     assert_redirected_to block_url(@block)
   end
 
